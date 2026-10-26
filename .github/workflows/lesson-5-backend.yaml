@@ -23,6 +23,11 @@ jobs:
         working-directory: backend
     steps:
       - uses: actions/checkout@v7.0.1
+      - name: disable debug
+        run: |
+         sed -i 's/DEBUG = True/DEBUG = False/g' \
+         hangry_api/hangry_api/settings.py
+
       - name: Set up Python 3.10
         uses: actions/setup-python@v7
         with:
