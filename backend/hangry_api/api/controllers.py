@@ -8,7 +8,8 @@ class Delivery():
     elif items > 5 and distance > 3:
       return 5
     else:
-      return 2.5
+      # Apply the standard delivery fee when neither surcharge tier applies.
+      return 3.50
 
 class Subtotal():
   def calculate(order):
